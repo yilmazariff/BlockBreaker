@@ -21,7 +21,7 @@ public class Main extends JApplet{
         JFrame f=new JFrame("Helehoyy!!");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setContentPane(new GameManager());
-        f.setBounds(20,20,450,600);
+        f.setBounds(20,20,820,580);
         f.setVisible(true);
 
     }
