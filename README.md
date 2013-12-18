@@ -1,3 +1,3 @@
 BlockBreaker
 ============
-bınela?
+pngleri atamadım shellden.. diğerlerini burdan editledim ama
