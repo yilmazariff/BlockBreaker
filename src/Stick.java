@@ -15,15 +15,12 @@ import java.awt.Graphics2D;
  */
 public class Stick {
     private int s_length;
-    private int s_height = 10;
+    private int s_height = 15;
+    private boolean isLocked=false;
 
     //... Instance variables
-    public int getSX() {
-        return s_x;
-    }
-
     private int s_x;           // x and y coordinates 
-    private int s_y= 510;
+    private int s_y= 508;
 
     private int s_velocityX =15;   // Pixels to move each time it moves
 
@@ -36,9 +33,9 @@ public class Stick {
     //constructor
     public Stick(){
         s_length= 60;
-        s_x= 225- (s_length/2);       
+        s_x= 400- (s_length/2);       
         c=Color.GREEN;
-        s_rightBound= 450-s_length;
+        s_rightBound= 800-s_length;
     }
 
     //boundaries
@@ -48,14 +45,18 @@ public class Stick {
 
     //movement of fish
     public void moveRight() {   
-        if(s_x < 430-s_length)
+        if(s_x < 800-s_length)
             s_x += s_velocityX;
+        else
+            s_x= 800-s_length;
      
     }
     public void moveLeft() {        
         if (s_x > 0) { 
            s_x -= s_velocityX; 
         }
+        else
+            s_x= 0;
     }
 
     public void drawS(Graphics g) {
@@ -65,12 +66,12 @@ public class Stick {
         gra.fillRect(s_x, s_y, s_length,s_height); // boundary
        
 }
-    public void setSX(int a){
-       s_x=a;
-    }
-    public int getLength(){
-        return s_length;
-    }
+    public int getSX() { return s_x;}
+    public int getLength(){ return s_length;}
+    public boolean getIsLocked() { return isLocked;}
+    
+    public void setSX(int a){s_x=a;}
+    public void setLocked(boolean a){isLocked=a;}
     
     public void setColor( Color newC){ // for others
         c=newC;
